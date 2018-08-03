@@ -12,4 +12,5 @@ RUN python3 -m pip install --no-cache jupyterhub==$JUPYTERHUB_VERSION && \
 
 ARG JUPYTERLAB_VERSION=0.33.6
 RUN     pip install jupyterlab==$JUPYTERLAB_VERSION \
-    &&  jupyter labextension install @jupyterlab/hub-extension
+    &&  jupyter labextension install @jupyterlab/hub-extension --no-build
+RUN jupyter lab build
